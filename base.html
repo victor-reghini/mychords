@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braço de Violão Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .controls {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .fretboard {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        select, button {
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .nut {
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .fret-marker {
+            background-color: #f2f2f2;
+        }
+        
+        .note {
+            padding: 5px;
+            border-radius: 50%;
+            min-width: 24px;
+            display: inline-block;
+        }
+        
+        .root {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .third {
+            background-color: #4ecdc4;
+            color: white;
+        }
+        
+        .fifth {
+            background-color: #ffe66d;
+            color: #333;
+        }
+        
+        .other {
+            background-color: #a5d8ff;
+            color: #333;
+        }
+        
+        .chord-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+        
+        .string {
+            background-color: #f8f9fa;
+        }
+        
+        .fret-number {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Braço de Violão Interativo</h1>
+    
+    <div class="controls">
+        <label for="chord-select">Selecione um acorde:</label>
+        <select id="chord-select">
+            <option value="">-- Escolha um acorde --</option>
+            <option value="C">Dó Maior (C)</option>
+            <option value="Cm">Dó Menor (Cm)</option>
+            <option value="D">Ré Maior (D)</option>
+            <option value="Dm">Ré Menor (Dm)</option>
+            <option value="E">Mi Maior (E)</option>
+            <option value="Em">Mi Menor (Em)</option>
+            <option value="F">Fá Maior (F)</option>
+            <option value="Fm">Fá Menor (Fm)</option>
+            <option value="G">Sol Maior (G)</option>
+            <option value="Gm">Sol Menor (Gm)</option>
+            <option value="A">Lá Maior (A)</option>
+            <option value="Am">Lá Menor (Am)</option>
+            <option value="B">Si Maior (B)</option>
+            <option value="Bm">Si Menor (Bm)</option>
+        </select>
+        
+        <button id="show-chord">Mostrar Acorde</button>
+        <button id="reset">Limpar</button>
+        
+        <div id="current-chord" class="chord-name"></div>
+    </div>
+    
+    <div class="fretboard">
+        <table id="guitar-neck">
+            <!-- O braço do violão será gerado por JavaScript -->
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuração do braço do violão
+            const strings = [
+                { name: 'E (1ª corda)', openNote: 'E' },
+                { name: 'B (2ª corda)', openNote: 'B' },
+                { name: 'G (3ª corda)', openNote: 'G' },
+                { name: 'D (4ª corda)', openNote: 'D' },
+                { name: 'A (5ª corda)', openNote: 'A' },
+                { name: 'E (6ª corda)', openNote: 'E' }
+            ];
+            
+            const frets = 12;
+            const notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+            
+            // Cria o braço do violão
+            const guitarNeck = document.getElementById('guitar-neck');
+            
+            // Cria o cabeçalho com os números das casas
+            const headerRow = document.createElement('tr');
+            const emptyHeader = document.createElement('th');
+            emptyHeader.textContent = 'Corda';
+            headerRow.appendChild(emptyHeader);
+            
+            for (let i = 0; i <= frets; i++) {
+                const th = document.createElement('th');
+                if (i === 0) {
+                    th.textContent = '0';
+                    th.classList.add('nut');
+                } else {
+                    th.textContent = i.toString();
+                    // Marcadores de casa (pontos de referência)
+                    if (i === 3 || i === 5 || i === 7 || i === 9 || i === 12) {
+                        th.classList.add('fret-marker');
+                    }
+                    if (i === 12) {
+                        th.innerHTML += '<br><span class="fret-number">● ●</span>';
+                    } else if (i === 3 || i === 5 || i === 7 || i === 9) {
+                        th.innerHTML += '<br><span class="fret-number">●</span>';
+                    }
+                }
+                headerRow.appendChild(th);
+            }
+            
+            guitarNeck.appendChild(headerRow);
+            
+            // Cria as linhas para cada corda
+            strings.forEach((string, stringIndex) => {
+                const row = document.createElement('tr');
+                row.classList.add('string');
+                
+                const stringName = document.createElement('td');
+                stringName.textContent = string.name;
+                row.appendChild(stringName);
+                
+                // Encontra o índice da nota aberta (solta) no array de notas
+                let currentNoteIndex = notes.indexOf(string.openNote);
+                
+                for (let i = 0; i <= frets; i++) {
+                    const td = document.createElement('td');
+                    if (i === 0) {
+                        td.classList.add('nut');
+                        td.textContent = string.openNote;
+                    } else {
+                        // Avança para a próxima nota
+                        currentNoteIndex = (currentNoteIndex + 1) % notes.length;
+                        const note = notes[currentNoteIndex];
+                        const noteSpan = document.createElement('span');
+                        noteSpan.textContent = note;
+                        noteSpan.classList.add('note');
+                        noteSpan.dataset.note = note;
+                        noteSpan.dataset.string = stringIndex;
+                        noteSpan.dataset.fret = i;
+                        td.appendChild(noteSpan);
+                    }
+                    row.appendChild(td);
+                }
+                
+                guitarNeck.appendChild(row);
+            });
+            
+            // Define os acordes e suas notas
+            const chords = {
+                'C': { name: 'Dó Maior', notes: ['C', 'E', 'G'] },
+                'Cm': { name: 'Dó Menor', notes: ['C', 'D#', 'G'] },
+                'D': { name: 'Ré Maior', notes: ['D', 'F#', 'A'] },
+                'Dm': { name: 'Ré Menor', notes: ['D', 'F', 'A'] },
+                'E': { name: 'Mi Maior', notes: ['E', 'G#', 'B'] },
+                'Em': { name: 'Mi Menor', notes: ['E', 'G', 'B'] },
+                'F': { name: 'Fá Maior', notes: ['F', 'A', 'C'] },
+                'Fm': { name: 'Fá Menor', notes: ['F', 'G#', 'C'] },
+                'G': { name: 'Sol Maior', notes: ['G', 'B', 'D'] },
+                'Gm': { name: 'Sol Menor', notes: ['G', 'A#', 'D'] },
+                'A': { name: 'Lá Maior', notes: ['A', 'C#', 'E'] },
+                'Am': { name: 'Lá Menor', notes: ['A', 'C', 'E'] },
+                'B': { name: 'Si Maior', notes: ['B', 'D#', 'F#'] },
+                'Bm': { name: 'Si Menor', notes: ['B', 'D', 'F#'] }
+            };
+            
+            // Evento para mostrar o acorde selecionado
+            document.getElementById('show-chord').addEventListener('click', function() {
+                const chordSelect = document.getElementById('chord-select');
+                const chordKey = chordSelect.value;
+                
+                if (!chordKey) return;
+                
+                const chord = chords[chordKey];
+                document.getElementById('current-chord').textContent = chord.name;
+                
+                // Remove todas as classes de destaque anteriores
+                document.querySelectorAll('.note').forEach(note => {
+                    note.classList.remove('root', 'third', 'fifth', 'other');
+                });
+                
+                // Destaca as notas do acorde
+                const rootNote = chord.notes[0];
+                const thirdNote = chord.notes[1];
+                const fifthNote = chord.notes[2];
+                
+                document.querySelectorAll('.note').forEach(note => {
+                    const noteName = note.dataset.note;
+                    
+                    if (noteName === rootNote) {
+                        note.classList.add('root');
+                    } else if (noteName === thirdNote) {
+                        note.classList.add('third');
+                    } else if (noteName === fifthNote) {
+                        note.classList.add('fifth');
+                    } else if (chord.notes.includes(noteName)) {
+                        note.classList.add('other');
+                    }
+                });
+            });
+            
+            // Evento para limpar o braço
+            document.getElementById('reset').addEventListener('click', function() {
+                document.querySelectorAll('.note').forEach(note => {
+                    note.classList.remove('root', 'third', 'fifth', 'other');
+                });
+                document.getElementById('chord-select').value = '';
+                document.getElementById('current-chord').textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>

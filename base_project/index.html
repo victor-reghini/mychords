@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braço de Violão Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Braço de Violão Interativo</h1>
+    
+    <div class="layout-controls">
+        <button id="toggle-layout" class="layout-btn">Alternar para Layout Vertical</button>
+    </div>
+    
+    <div class="container horizontal-layout" id="main-container">
+        <div class="controls">
+            <label for="chord-select">Selecione um acorde:</label>
+            <select id="chord-select">
+                <option value="">-- Escolha um acorde --</option>
+                <!-- <option value="C">Dó Maior (C)</option>
+                <option value="Cm">Dó Menor (Cm)</option>
+                <option value="D">Ré Maior (D)</option>
+                <option value="Dm">Ré Menor (Dm)</option>
+                <option value="E">Mi Maior (E)</option>
+                <option value="Em">Mi Menor (Em)</option>
+                <option value="F">Fá Maior (F)</option>
+                <option value="Fm">Fá Menor (Fm)</option>
+                <option value="G">Sol Maior (G)</option>
+                <option value="Gm">Sol Menor (Gm)</option>
+                <option value="A">Lá Maior (A)</option>
+                <option value="Am">Lá Menor (Am)</option>
+                <option value="B">Si Maior (B)</option>
+                <option value="Bm">Si Menor (Bm)</option> -->
+            </select>
+            
+            <button id="show-chord">Mostrar Acorde</button>
+            <button id="reset">Limpar</button>
+            
+            <div id="current-chord" class="chord-name"></div>
+        </div>
+        
+        <div class="fretboard">
+            <table id="guitar-neck">
+                <!-- O braço do violão será gerado por JavaScript -->
+            </table>
+            
+            <div id="vertical-guitar-neck" class="vertical-table" style="display: none;">
+                <!-- Versão vertical do braço -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
