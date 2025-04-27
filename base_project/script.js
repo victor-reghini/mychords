@@ -53,15 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i <= frets; i++) {
             const th = document.createElement('th');
             if (i === 0) {
-                th.textContent = '';
                 th.classList.add('nut');
             } else {
-                th.textContent = '';
                 // Marcadores de casa (pontos de referência)
                 if (i === 12) {
-                    th.innerHTML += '<br><span class="fret-number">● ●</span>';
+                    th.innerHTML += '<span class="fret-number">● ●</span>';
                 } else if ([3, 5, 7, 9].includes(i)) {
-                    th.innerHTML += '<br><span class="fret-number">●</span>';
+                    th.innerHTML += '<span class="fret-number">●</span>';
                 } else {
                     th.classList.add('fret-marker');
                 }
@@ -184,36 +182,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Destacar as notas do acorde
     function highlightChordNotes(chord) {
+        const notesClassList = ['root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'other'];
         // Remove todas as classes de destaque anteriores
         document.querySelectorAll('.note, .nut').forEach(element => {
             element.classList.remove('root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'other');
         });
         
         // Destaca as notas do acorde
-        const rootNote = chord.notes[0];
-        const secondNote = chord.notes[1];
-        const thirdNote = chord.notes[2];
-        const fourthNote = chord.notes[3];
-        const fifthNote = chord.notes[4];
-        const sixthNote = chord.notes[5];
         
         document.querySelectorAll('.note, [data-note]').forEach(element => {
             const noteName = element.dataset.note;
             
-            if (noteName === rootNote) {
-                element.classList.add('root');
-            } else if (noteName === secondNote) {
-                element.classList.add('second');
-            } else if (noteName === thirdNote) {
-                element.classList.add('third');
-            } else if (noteName === fourthNote) {
-                element.classList.add('fourth');
-            } else if (noteName === fifthNote) {
-                element.classList.add('fifth');
-            } else if (noteName === sixthNote) {
-                element.classList.add('sixth');
-            } else if (chord.notes.includes(noteName)) {
-                element.classList.add('other');
+            if (chord.notes.includes(noteName)) {
+                const noteIndex = chord.notes.findIndex(note => note === noteName);
+                element.classList.add(notesClassList[noteIndex]);
             }
         });
     }
@@ -253,8 +235,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const chordIndex = chords_json.findIndex(({note}) => note === chordKey);
         currentChord = chords_json[chordIndex];
         const chordNotes = currentChord.notes.join(" - ");
-        const harmonicField = currentChord.campo_harmonico.join(" - ");
-        document.getElementById('current-chord').textContent = currentChord.name + " (" + chordNotes + ")" + "\n Campo Harmônico: (" + harmonicField + ")";
+        const harmonicField = currentChord.campo_harmonico ? "\n Campo Harmônico: (" + currentChord.campo_harmonico.join(" - ")  + ")" : "";
+        document.getElementById('current-chord').textContent = currentChord.name + " (" + chordNotes + ")" + harmonicField;
         
         highlightChordNotes(currentChord);
     });
