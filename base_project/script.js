@@ -186,23 +186,32 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightChordNotes(chord) {
         // Remove todas as classes de destaque anteriores
         document.querySelectorAll('.note, .nut').forEach(element => {
-            element.classList.remove('root', 'third', 'fifth', 'other');
+            element.classList.remove('root', 'second', 'third', 'fourth', 'fifth', 'sixth', 'other');
         });
         
         // Destaca as notas do acorde
         const rootNote = chord.notes[0];
-        const thirdNote = chord.notes[1];
-        const fifthNote = chord.notes[2];
+        const secondNote = chord.notes[1];
+        const thirdNote = chord.notes[2];
+        const fourthNote = chord.notes[3];
+        const fifthNote = chord.notes[4];
+        const sixthNote = chord.notes[5];
         
         document.querySelectorAll('.note, [data-note]').forEach(element => {
             const noteName = element.dataset.note;
             
             if (noteName === rootNote) {
                 element.classList.add('root');
+            } else if (noteName === secondNote) {
+                element.classList.add('second');
             } else if (noteName === thirdNote) {
                 element.classList.add('third');
+            } else if (noteName === fourthNote) {
+                element.classList.add('fourth');
             } else if (noteName === fifthNote) {
                 element.classList.add('fifth');
+            } else if (noteName === sixthNote) {
+                element.classList.add('sixth');
             } else if (chord.notes.includes(noteName)) {
                 element.classList.add('other');
             }
@@ -244,7 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const chordIndex = chords_json.findIndex(({note}) => note === chordKey);
         currentChord = chords_json[chordIndex];
         const chordNotes = currentChord.notes.join(" - ");
-        document.getElementById('current-chord').textContent = currentChord.name + " (" + chordNotes + ")";
+        const harmonicField = currentChord.campo_harmonico.join(" - ");
+        document.getElementById('current-chord').textContent = currentChord.name + " (" + chordNotes + ")" + "\n Campo Harmônico: (" + harmonicField + ")";
         
         highlightChordNotes(currentChord);
     });

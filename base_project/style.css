@@ -1,8 +1,11 @@
 :root {
     --root-color: #ff6b6b;
-    --third-color: #4ecdc4;
-    --fifth-color: #ffe66d;
-    --other-color: #a5d8ff;
+    --second-color: #4ecdc4;
+    --third-color: #ffe66d;
+    --fourth-color: #ff9df2;
+    --fifth-color: #ffb46d;
+    --sixth-color: #4e85cd;
+    --other-color: #aeff88;
     --nut-color: #333;
     --fret-marker-color: #f2f2f2;
     --string-color: #f8f9fa;
@@ -131,21 +134,43 @@ th {
 .root {
     background-color: var(--root-color);
     color: white;
+    font-weight: bold;
+}
+
+.second {
+    background-color: var(--second-color);
+    color: white;
+    font-weight: bold;
 }
 
 .third {
     background-color: var(--third-color);
+    color: #333;
+    font-weight: bold;
+}
+
+.fourth {
+    background-color: var(--fourth-color);
     color: white;
+    font-weight: bold;
 }
 
 .fifth {
     background-color: var(--fifth-color);
-    color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.sixth {
+    background-color: var(--sixth-color);
+    color: white;
+    font-weight: bold;
 }
 
 .other {
     background-color: var(--other-color);
     color: #333;
+    font-weight: bold;
 }
 
 .chord-name {
