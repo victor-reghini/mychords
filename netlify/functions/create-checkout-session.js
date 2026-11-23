@@ -44,7 +44,7 @@ export const handler = async (event) => {
         }
 
         const customerEmail = payload.customer_email || undefined;
-        
+
         // Determina o host de retorno a partir dos cabeçalhos do Netlify / browser
         const referer = event.headers.referer || event.headers.origin || 'http://localhost:8888';
         const urlObj = new URL(referer);

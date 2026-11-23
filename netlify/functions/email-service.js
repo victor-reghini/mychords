@@ -15,11 +15,11 @@ const __dirname = path.dirname(__filename);
 export async function sendApostilaEmail(recipientEmail, recipientName = 'Músico(a)') {
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASSWORD;
-    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpHost = process.env.SMTP_HOST;
     const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
 
-    if (!smtpUser || !smtpPass) {
-        throw new Error('Credenciais SMTP (SMTP_USER ou SMTP_PASSWORD) não configuradas nas variáveis de ambiente.');
+    if (!smtpUser || !smtpPass || !smtpHost) {
+        throw new Error('Credenciais SMTP (SMTP_USER, SMTP_PASSWORD ou SMTP_HOST) não configuradas nas variáveis de ambiente.');
     }
 
     const transporter = nodemailer.createTransport({
