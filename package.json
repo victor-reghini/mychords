@@ -1,0 +1,27 @@
+{
+  "name": "mychords",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-reghini/mychords.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-reghini/mychords/issues"
+  },
+  "homepage": "https://github.com/victor-reghini/mychords#readme",
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "nodemailer": "^10.6.1",
+    "pdfkit": "^0.21.0",
+    "stripe": "^23.2.0"
+  }
+}

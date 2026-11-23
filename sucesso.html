@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado • MyChords</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𝄞</text></svg>">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1 class="brand-title">
+                        <span style="color: var(--accent-amber);">𝄞</span> MyChords
+                    </h1>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content" style="max-width: 720px; padding-top: 3rem;">
+        <div class="control-deck" style="text-align: center; padding: 3rem 2rem;">
+            <div style="font-size: 3.5rem; color: #137333; margin-bottom: 1rem;">✓</div>
+            <h2 class="serif-heading" style="font-size: 2rem; margin-bottom: 0.5rem;">Muito Obrigado pela Sua Compra!</h2>
+            <p id="status-message" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Estamos confirmando a sua sessão e despachando a apostila para o seu e-mail...
+            </p>
+
+            <div id="email-confirmation-box" class="circle-card" style="display: none; text-align: left; margin-bottom: 2rem; background-color: var(--bg-surface-alt);">
+                <h4 style="margin-bottom: 0.5rem;">Detalhes do Pedido Confirmado:</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0.3rem;"><strong>Produto:</strong> Apostila Completa de Teoria & Harmonia Musical (PDF)</p>
+                <p style="font-size: 0.95rem; margin-bottom: 0.3rem;"><strong>Valor Pago:</strong> R$ 14,99</p>
+                <p style="font-size: 0.95rem; margin-bottom: 0.3rem;"><strong>E-mail de Destino:</strong> <span id="buyer-email-display" style="color: var(--accent-amber); font-weight: 700;"></span></p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    O e-mail com o arquivo PDF em anexo foi transmitido via conexão segura Gmail SSL. Verifique sua caixa de entrada e também a pasta de spam ou promoções caso demore alguns instantes.
+                </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+                <a id="btn-download-pdf" href="assets/apostila-teoria-musical.pdf" download="Apostila-Teoria-Musical-MyChords.pdf" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.8rem 1.8rem; display: none;">
+                    📥 Baixar Apostila Agora (PDF Direto)
+                </a>
+
+                <a href="index.html" class="btn btn-outline" style="font-size: 0.95rem;">
+                    Voltar para o Laboratório Interativo
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 MyChords • Suporte: reghinidev@gmail.com</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+            const statusMsg = document.getElementById('status-message');
+            const confirmationBox = document.getElementById('email-confirmation-box');
+            const emailDisplay = document.getElementById('buyer-email-display');
+            const btnDownload = document.getElementById('btn-download-pdf');
+
+            if (!sessionId) {
+                statusMsg.textContent = 'Sessão concluída! Você já pode realizar o download da sua apostila abaixo:';
+                btnDownload.style.display = 'inline-flex';
+                return;
+            }
+
+            try {
+                const endpoint = `/.netlify/functions/verify-session?session_id=${encodeURIComponent(sessionId)}`;
+                const res = await fetch(endpoint);
+                const data = await res.json();
+
+                if (data.paid) {
+                    statusMsg.textContent = 'Seu pagamento de R$ 14,99 foi aprovado com sucesso!';
+                    if (data.customerEmail) {
+                        emailDisplay.textContent = data.customerEmail;
+                        confirmationBox.style.display = 'block';
+                    }
+                    btnDownload.style.display = 'inline-flex';
+                } else {
+                    statusMsg.textContent = 'O pagamento ainda está sendo processado pela Stripe. Você também receberá a confirmação por e-mail assim que compensado.';
+                    btnDownload.style.display = 'inline-flex';
+                }
+            } catch (err) {
+                console.warn('Verificação de sessão em modo estático/local:', err);
+                statusMsg.textContent = 'Pagamento registrado! Você pode realizar o download direto da sua apostila abaixo:';
+                btnDownload.style.display = 'inline-flex';
+            }
+        });
+    </script>
+</body>
+</html>

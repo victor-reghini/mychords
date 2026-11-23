@@ -1,0 +1,402 @@
+[
+    {"name": "Dó Maior", "note": "C", "notes": ["C", "E", "G"]},
+    {"name": "Dó Menor", "note": "Cm", "notes": ["C", "D#", "G"]},
+    {"name": "Dó Aumentado", "note": "Caug", "notes": ["C", "E", "G#"]},
+    {"name": "Dó Diminuto", "note": "C°", "notes": ["C", "D#", "F#"]},
+    {"name": "Dó 7ª Maior", "note": "Cmaj7", "notes": ["C", "E", "G", "B"]},
+    {"name": "Dó 7ª", "note": "C7", "notes": ["C", "E", "G", "A#"]},
+    {"name": "Dó 7ª Menor", "note": "Cm7", "notes": ["C", "D#", "G", "A#"]},
+    {"name": "Dó 7ª Diminuta", "note": "C°7", "notes": ["C", "D#", "F#", "A"]},
+    {"name": "Dó 7ª Meio-Diminuta", "note": "Cm7b5", "notes": ["C", "D#", "F#", "A#"]},
+    {"name": "Dó 6ª", "note": "C6", "notes": ["C", "E", "G", "A"]},
+    {"name": "Dó 6ª Menor", "note": "Cm6", "notes": ["C", "D#", "G", "A"]},
+    {"name": "Dó 9ª", "note": "C9", "notes": ["C", "E", "G", "A#", "D"]},
+    {"name": "Dó 9ª Maior", "note": "Cmaj9", "notes": ["C", "E", "G", "B", "D"]},
+    {"name": "Dó 9ª Menor", "note": "Cm9", "notes": ["C", "D#", "G", "A#", "D"]},
+    {"name": "Dó 11ª", "note": "C11", "notes": ["C", "E", "G", "A#", "D", "F"]},
+    {"name": "Dó 13ª", "note": "C13", "notes": ["C", "E", "G", "A#", "D", "F", "A"]},
+    {"name": "Dó sus2", "note": "Csus2", "notes": ["C", "D", "G"]},
+    {"name": "Dó sus4", "note": "Csus4", "notes": ["C", "F", "G"]},
+    {"name": "Dó 7sus4", "note": "C7sus4", "notes": ["C", "F", "G", "A#"]},
+    {"name": "Dó add2", "note": "Cadd2", "notes": ["C", "D", "E", "G"]},
+    {"name": "Dó add4", "note": "Cadd4", "notes": ["C", "E", "F", "G"]},
+    {"name": "Dó 7ª(b5)", "note": "C7b5", "notes": ["C", "E", "F#", "A#"]},
+    {"name": "Dó 7ª(#5)", "note": "C7#5", "notes": ["C", "E", "G#", "A#"]},
+    {"name": "Dó 7ª(b9)", "note": "C7b9", "notes": ["C", "E", "G", "A#", "C#"]},
+    {"name": "Dó 7ª(#9)", "note": "C7#9", "notes": ["C", "E", "G", "A#", "D#"]},
+    {"name": "Dó# Maior", "note": "C#", "notes": ["C#", "F", "G#"]},
+    {"name": "Dó# Menor", "note": "C#m", "notes": ["C#", "E", "G#"]},
+    {"name": "Ré Bemol Maior", "note": "Db", "notes": ["C#", "F", "G#"]},
+    {"name": "Ré Bemol Menor", "note": "Dbm", "notes": ["C#", "E", "G#"]},
+    {"name": "Dó# Aumentado", "note": "C#aug", "notes": ["C#", "F", "A"]},
+    {"name": "Dó# Diminuto", "note": "C#°", "notes": ["C#", "E", "G"]},
+    {"name": "Dó# 7ª Maior", "note": "C#maj7", "notes": ["C#", "F", "G#", "C"]},
+    {"name": "Dó# 7ª", "note": "C#7", "notes": ["C#", "F", "G#", "B"]},
+    {"name": "Dó# 7ª Menor", "note": "C#m7", "notes": ["C#", "E", "G#", "B"]},
+    {"name": "Dó# 7ª Diminuta", "note": "C#°7", "notes": ["C#", "E", "G", "A#"]},
+    {"name": "Dó# 6ª", "note": "C#6", "notes": ["C#", "F", "G#", "A#"]},
+    {"name": "Dó# 9ª", "note": "C#9", "notes": ["C#", "F", "G#", "B", "D#"]},
+    {"name": "Dó# sus4", "note": "C#sus4", "notes": ["C#", "F#", "G#"]},
+    {"name": "Dó# 7ª(b9)", "note": "C#7b9", "notes": ["C#", "F", "G#", "B", "D"]},
+    {"name": "Ré Maior", "note": "D", "notes": ["D", "F#", "A"]},
+    {"name": "Ré Menor", "note": "Dm", "notes": ["D", "F", "A"]},
+    {"name": "Ré Aumentado", "note": "Daug", "notes": ["D", "F#", "A#"]},
+    {"name": "Ré Diminuto", "note": "D°", "notes": ["D", "F", "G#"]},
+    {"name": "Ré 7ª Maior", "note": "Dmaj7", "notes": ["D", "F#", "A", "C#"]},
+    {"name": "Ré 7ª", "note": "D7", "notes": ["D", "F#", "A", "C"]},
+    {"name": "Ré 7ª Menor", "note": "Dm7", "notes": ["D", "F", "A", "C"]},
+    {"name": "Ré 9ª", "note": "D9", "notes": ["D", "F#", "A", "C", "E"]},
+    {"name": "Ré 13ª", "note": "D13", "notes": ["D", "F#", "A", "C", "E", "G", "B"]},
+    {"name": "Ré add9", "note": "Dadd9", "notes": ["D", "F#", "A", "E"]},
+    {"name": "Ré 7ª(#5)", "note": "D7#5", "notes": ["D", "F#", "A#", "C"]},
+    {"name": "Ré# Maior", "note": "D#", "notes": ["D#", "G", "A#"]},
+    {"name": "Ré# Menor", "note": "D#m", "notes": ["D#", "F#", "A#"]},
+    {"name": "Mi Bemol Maior", "note": "Eb", "notes": ["D#", "G", "A#"]},
+    {"name": "Mi Bemol Menor", "note": "Ebm", "notes": ["D#", "F#", "A#"]},
+    {"name": "Eb 7ª", "note": "Eb7", "notes": ["D#", "G", "A#", "C#"]},
+    {"name": "Eb 9ª", "note": "Eb9", "notes": ["D#", "G", "A#", "C#", "F"]},
+    {"name": "Mi Maior", "note": "E", "notes": ["E", "G#", "B"]},
+    {"name": "Mi Menor", "note": "Em", "notes": ["E", "G", "B"]},
+    {"name": "Mi 7ª", "note": "E7", "notes": ["E", "G#", "B", "D"]},
+    {"name": "Mi 7ª Menor", "note": "Em7", "notes": ["E", "G", "B", "D"]},
+    {"name": "Mi 9ª", "note": "E9", "notes": ["E", "G#", "B", "D", "F#"]},
+    {"name": "Mi 7ª(b9)", "note": "E7b9", "notes": ["E", "G#", "B", "D", "F"]},
+    {"name": "Fá Maior", "note": "F", "notes": ["F", "A", "C"]},
+    {"name": "Fá Menor", "note": "Fm", "notes": ["F", "G#", "C"]},
+    {"name": "Fá 7ª", "note": "F7", "notes": ["F", "A", "C", "D#"]},
+    {"name": "Fá 9ª", "note": "F9", "notes": ["F", "A", "C", "D#", "G"]},
+    {"name": "Fá 13ª", "note": "F13", "notes": ["F", "A", "C", "D#", "G", "A#", "D"]},
+    {"name": "Fá# Maior", "note": "F#", "notes": ["F#", "A#", "C#"]},
+    {"name": "Fá# Menor", "note": "F#m", "notes": ["F#", "A", "C#"]},
+    {"name": "Sol Bemol Maior", "note": "Gb", "notes": ["F#", "A#", "C#"]},
+    {"name": "Fá# 7ª", "note": "F#7", "notes": ["F#", "A#", "C#", "E"]},
+    {"name": "Sol Maior", "note": "G", "notes": ["G", "B", "D"]},
+    {"name": "Sol Menor", "note": "Gm", "notes": ["G", "A#", "D"]},
+    {"name": "Sol 7ª", "note": "G7", "notes": ["G", "B", "D", "F"]},
+    {"name": "Sol 9ª", "note": "G9", "notes": ["G", "B", "D", "F", "A"]},
+    {"name": "Sol 13ª", "note": "G13", "notes": ["G", "B", "D", "F", "A", "C", "E"]},
+    {"name": "Sol# Maior", "note": "G#", "notes": ["G#", "C", "D#"]},
+    {"name": "Lá Bemol Maior", "note": "Ab", "notes": ["G#", "C", "Eb"]},
+    {"name": "Ab 7ª", "note": "Ab7", "notes": ["G#", "C", "D#", "F#"]},
+    {"name": "Lá Maior", "note": "A", "notes": ["A", "C#", "E"]},
+    {"name": "Lá Menor", "note": "Am", "notes": ["A", "C", "E"]},
+    {"name": "Lá 7ª", "note": "A7", "notes": ["A", "C#", "E", "G"]},
+    {"name": "Lá 9ª", "note": "A9", "notes": ["A", "C#", "E", "G", "B"]},
+    {"name": "Lá 7ª(#9)", "note": "A7#9", "notes": ["A", "C#", "E", "G", "C"]},
+    {"name": "Lá# Maior", "note": "A#", "notes": ["A#", "D", "F"]},
+    {"name": "Si Bemol Maior", "note": "Bb", "notes": ["A#", "D", "F"]},
+    {"name": "Bb 7ª", "note": "Bb7", "notes": ["A#", "D", "F", "G#"]},
+    {"name": "Si Maior", "note": "B", "notes": ["B", "D#", "F#"]},
+    {"name": "Si Menor", "note": "Bm", "notes": ["B", "D", "F#"]},
+    {"name": "Si 7ª", "note": "B7", "notes": ["B", "D#", "F#", "A"]},
+    {"name": "Si 9ª", "note": "B9", "notes": ["B", "D#", "F#", "A", "C#"]},
+    {"name": "Si 7ª(b9)", "note": "B7b9", "notes": ["B", "D#", "F#", "A", "C"]},
+    {"name": "Escala Menor Melódica de Ré (descendente)", "note": "D-mmin-desc", "notes": ["D", "E", "F", "G", "A", "A#", "C"]},
+    {"name": "Escala Menor Melódica de Mi (descendente)", "note": "E-mmin-desc", "notes": ["E", "F#", "G", "A", "B", "C", "D"]},
+    {"name": "Escala Menor Melódica de Lá (descendente)", "note": "A-mmin-desc", "notes": ["A", "B", "C", "D", "E", "F", "G"]},
+    {"name": "Pentatônica Maior de Dó", "note": "C-maj-pent", "notes": ["C", "D", "E", "G", "A"]},
+    {"name": "Pentatônica Menor de Dó", "note": "C-min-pent", "notes": ["C", "D#", "F", "G", "A#"]},
+    {"name": "Pentatônica Maior de Sol", "note": "G-maj-pent", "notes": ["G", "A", "B", "D", "E"]},
+    {"name": "Pentatônica Menor de Sol", "note": "G-min-pent", "notes": ["G", "A#", "C", "D", "F"]},
+    {"name": "Pentatônica Maior de Lá", "note": "A-maj-pent", "notes": ["A", "B", "C#", "E", "F#"]},
+    {"name": "Pentatônica Menor de Lá", "note": "A-min-pent", "notes": ["A", "C", "D", "E", "G"]},
+    {"name": "Escala de Blues de Dó", "note": "C-blues", "notes": ["C", "D#", "F", "F#", "G", "A#"]},
+    {"name": "Escala de Blues de Sol", "note": "G-blues", "notes": ["G", "A#", "C", "C#", "D", "F"]},
+    {"name": "Escala de Blues de Lá", "note": "A-blues", "notes": ["A", "C", "D", "D#", "E", "G"]},
+    {"name": "Dó Jônio (Modo I)", "note": "C-ionian", "notes": ["C", "D", "E", "F", "G", "A", "B"]},
+    {"name": "Dó Dórico (Modo II)", "note": "C-dorian", "notes": ["C", "D", "D#", "F", "G", "A", "A#"]},
+    {"name": "Dó Frígio (Modo III)", "note": "C-phrygian", "notes": ["C", "C#", "D#", "F", "G", "G#", "A#"]},
+    {"name": "Dó Lídio (Modo IV)", "note": "C-lydian", "notes": ["C", "D", "E", "F#", "G", "A", "B"]},
+    {"name": "Dó Mixolídio (Modo V)", "note": "C-mixolydian", "notes": ["C", "D", "E", "F", "G", "A", "A#"]},
+    {"name": "Dó Eólio (Modo VI)", "note": "C-aeolian", "notes": ["C", "D", "D#", "F", "G", "G#", "A#"]},
+    {"name": "Dó Lócrio (Modo VII)", "note": "C-locrian", "notes": ["C", "C#", "D#", "F", "F#", "G#", "A#"]},
+    {"name": "Escala Menor Bachiana de Dó", "note": "C-bach", "notes": ["C", "D", "D#", "F", "G", "G#", "B"]},
+    {"name": "Escala Hirajoshi de Dó", "note": "C-hirajoshi", "notes": ["C", "D", "F", "G", "A#"]},
+    {"name": "Escala Kumoi de Dó", "note": "C-kumoi", "notes": ["C", "D", "F", "G", "A"]},
+    {"name": "Escala Árabe de Dó", "note": "C-arabic", "notes": ["C", "C#", "E", "F", "G", "G#", "B"]},
+    {"name": "Escala Hirojoshi de Sol", "note": "G-hirojoshi", "notes": ["G", "A", "C", "D", "F"]},
+    {"name": "Escala Tons Inteiros de Dó", "note": "C-wholetone", "notes": ["C", "D", "E", "F#", "G#", "A#"]},
+    {"name": "Escala Diminuta de Dó", "note": "C-diminished", "notes": ["C", "D", "D#", "F", "F#", "G#", "A", "B"]},
+    {
+        "name": "Escala Maior de Dó",
+        "note": "C-maj",
+        "notes": ["C", "D", "E", "F", "G", "A", "B"],
+        "campo_harmonico": ["C", "Dm", "Em", "F", "G", "Am", "Bm5"]
+    },
+    {
+        "name": "Escala Maior de Dó#",
+        "note": "C#-maj",
+        "notes": ["C#", "D#", "F", "F#", "G#", "A#", "C"],
+        "campo_harmonico": ["C#", "D#m", "Fm", "F#", "G#", "A#m", "Cm5"]
+    },
+    {
+        "name": "Escala Maior de Ré",
+        "note": "D-maj",
+        "notes": ["D", "E", "F#", "G", "A", "B", "C#"],
+        "campo_harmonico": ["D", "Em", "F#m", "G", "A", "Bm", "C#m5"]
+    },
+    {
+        "name": "Escala Maior de Ré#",
+        "note": "D#-maj",
+        "notes": ["D#", "F", "G", "G#", "A#", "C", "D"],
+        "campo_harmonico": ["D#", "Fm", "Gm", "G#", "A#", "Cm", "Dm5"]
+    },
+    {
+        "name": "Escala Maior de Mi",
+        "note": "E-maj",
+        "notes": ["E", "F#", "G#", "A", "B", "C#", "D#"],
+        "campo_harmonico": ["E", "F#m", "G#m", "A", "B", "C#m", "D#m5"]
+    },
+    {
+        "name": "Escala Maior de Fá",
+        "note": "F-maj",
+        "notes": ["F", "G", "A", "A#", "C", "D", "E"],
+        "campo_harmonico": ["F", "Gm", "Am", "A#", "C", "Dm", "Em5"]
+    },
+    {
+        "name": "Escala Maior de Fá#",
+        "note": "F#-maj",
+        "notes": ["F#", "G#", "A#", "B", "C#", "D#", "F"],
+        "campo_harmonico": ["F#", "G#m", "A#m", "B", "C#", "D#m", "Fm5"]
+    },
+    {
+        "name": "Escala Maior de Sol",
+        "note": "G-maj",
+        "notes": ["G", "A", "B", "C", "D", "E", "F#"],
+        "campo_harmonico": ["G", "Am", "Bm", "C", "D", "Em", "F#m5"]
+    },
+    {
+        "name": "Escala Maior de Sol#",
+        "note": "G#-maj",
+        "notes": ["G#", "A#", "C", "C#", "D#", "F", "G"],
+        "campo_harmonico": ["G#", "A#m", "Cm", "C#", "D#", "Fm", "Gm5"]
+    },
+    {
+        "name": "Escala Maior de Lá",
+        "note": "A-maj",
+        "notes": ["A", "B", "C#", "D", "E", "F#", "G#"],
+        "campo_harmonico": ["A", "Bm", "C#m", "D", "E", "F#m", "G#m5"]
+    },
+    {
+        "name": "Escala Maior de Lá#",
+        "note": "A#-maj",
+        "notes": ["A#", "C", "D", "D#", "F", "G", "A"],
+        "campo_harmonico": ["A#", "Cm", "Dm", "D#", "F", "Gm", "Am5"]
+    },
+    {
+        "name": "Escala Maior de Si",
+        "note": "B-maj",
+        "notes": ["B", "C#", "D#", "E", "F#", "G#", "A#"],
+        "campo_harmonico": ["B", "C#m", "D#m", "E", "F#", "G#m", "A#m5"]
+    },
+    {
+        "name": "Escala Menor Natural de Dó",
+        "note": "C-min",
+        "notes": ["C", "D", "D#", "F", "G", "G#", "A#"],
+        "campo_harmonico": ["Cm", "Dm5", "D#", "Fm", "Gm", "G#", "A#"]
+    },
+    {
+        "name": "Escala Menor Natural de Dó#",
+        "note": "C#-min",
+        "notes": ["C#", "D#", "E", "F#", "G#", "A", "B"],
+        "campo_harmonico": ["C#m", "D#m5", "E", "F#m", "G#m", "A", "B"]
+    },
+    {
+        "name": "Escala Menor Natural de Ré",
+        "note": "D-min",
+        "notes": ["D", "E", "F", "G", "A", "A#", "C"],
+        "campo_harmonico": ["Dm", "Em5", "F", "Gm", "Am", "A#", "C"]
+    },
+    {
+        "name": "Escala Menor Natural de Ré#",
+        "note": "D#-min",
+        "notes": ["D#", "F", "F#", "G#", "A#", "B", "C#"],
+        "campo_harmonico": ["D#m", "Fm5", "F#", "G#m", "A#m", "B", "C#"]
+    },
+    {
+        "name": "Escala Menor Natural de Mi",
+        "note": "E-min",
+        "notes": ["E", "F#", "G", "A", "B", "C", "D"],
+        "campo_harmonico": ["Em", "F#m5", "G", "Am", "Bm", "C", "D"]
+    },
+    {
+        "name": "Escala Menor Natural de Fá",
+        "note": "F-min",
+        "notes": ["F", "G", "G#", "A#", "C", "C#", "D#"],
+        "campo_harmonico": ["Fm", "Gm5", "G#", "A#m", "Cm", "C#", "D#"]
+    },
+    {
+        "name": "Escala Menor Natural de Fá#",
+        "note": "F#-min",
+        "notes": ["F#", "G#", "A", "B", "C#", "D", "E"],
+        "campo_harmonico": ["F#m", "G#m5", "A", "Bm", "C#m", "D", "E"]
+    },
+    {
+        "name": "Escala Menor Natural de Sol",
+        "note": "G-min",
+        "notes": ["G", "A", "A#", "C", "D", "D#", "F"],
+        "campo_harmonico": ["Gm", "Am5", "A#", "Cm", "Dm", "D#", "F"]
+    },
+    {
+        "name": "Escala Menor Natural de Sol#",
+        "note": "G#-min",
+        "notes": ["G#", "A#", "B", "C#", "D#", "E", "F#"],
+        "campo_harmonico": ["G#m", "A#m5", "B", "C#m", "D#m", "E", "F#"]
+    },
+    {
+        "name": "Escala Menor Natural de Lá",
+        "note": "A-min",
+        "notes": ["A", "B", "C", "D", "E", "F", "G"],
+        "campo_harmonico": ["Am", "Bm5", "C", "Dm", "Em", "F", "G"]
+    },
+    {
+        "name": "Escala Menor Natural de Lá#",
+        "note": "A#-min",
+        "notes": ["A#", "C", "C#", "D#", "F", "F#", "G#"],
+        "campo_harmonico": ["A#m", "Cm5", "C#", "D#m", "Fm", "F#", "G#"]
+    },
+    {
+        "name": "Escala Menor Natural de Si",
+        "note": "B-min",
+        "notes": ["B", "C#", "D", "E", "F#", "G", "A"],
+        "campo_harmonico": ["Bm", "C#m5", "D", "Em", "F#m", "G", "A"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Dó",
+        "note": "C-hmin",
+        "notes": ["C", "D", "D#", "F", "G", "G#", "B"],
+        "campo_harmonico": ["Cm", "Dm5", "D#aug", "Fm", "G", "G#", "Bm5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Dó#",
+        "note": "C#-hmin",
+        "notes": ["C#", "D#", "E", "F#", "G#", "A", "C"],
+        "campo_harmonico": ["C#m", "D#m5", "Faug", "F#m", "G#", "A", "Cm5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Ré",
+        "note": "D-hmin",
+        "notes": ["D", "E", "F", "G", "A", "A#", "C#"],
+        "campo_harmonico": ["Dm", "Em5", "Faug", "Gm", "A", "A#", "C#m5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Ré#",
+        "note": "D#-hmin",
+        "notes": ["D#", "F", "F#", "G#", "A#", "B", "D"],
+        "campo_harmonico": ["D#m", "Fm5", "F#aug", "G#m", "A#", "B", "Dm5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Mi",
+        "note": "E-hmin",
+        "notes": ["E", "F#", "G", "A", "B", "C", "D#"],
+        "campo_harmonico": ["Em", "F#m5", "Gaug", "Am", "B", "C", "D#m5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Fá",
+        "note": "F-hmin",
+        "notes": ["F", "G", "G#", "A#", "C", "C#", "E"],
+        "campo_harmonico": ["Fm", "Gm5", "G#aug", "A#m", "C", "C#", "Em5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Fá#",
+        "note": "F#-hmin",
+        "notes": ["F#", "G#", "A", "B", "C#", "D", "F"],
+        "campo_harmonico": ["F#m", "G#m5", "Aaug", "Bm", "C#", "D", "Fm5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Sol",
+        "note": "G-hmin",
+        "notes": ["G", "A", "A#", "C", "D", "D#", "F#"],
+        "campo_harmonico": ["Gm", "Am5", "A#aug", "Cm", "D", "D#", "F#m5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Sol#",
+        "note": "G#-hmin",
+        "notes": ["G#", "A#", "B", "C#", "D#", "E", "G"],
+        "campo_harmonico": ["G#m", "A#m5", "Caug", "C#m", "D#", "E", "Gm5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Lá",
+        "note": "A-hmin",
+        "notes": ["A", "B", "C", "D", "E", "F", "G#"],
+        "campo_harmonico": ["Am", "Bm5", "Caug", "Dm", "E", "F", "G#m5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Lá#",
+        "note": "A#-hmin",
+        "notes": ["A#", "C", "C#", "D#", "F", "F#", "A"],
+        "campo_harmonico": ["A#m", "Cm5", "C#aug", "D#m", "F", "F#", "Am5"]
+    },
+    {
+        "name": "Escala Menor Harmônica de Si",
+        "note": "B-hmin",
+        "notes": ["B", "C#", "D", "E", "F#", "G", "A#"],
+        "campo_harmonico": ["Bm", "C#m5", "Daug", "Em", "F#", "G", "A#m5"]
+    },
+    {
+        "name": "Escala Menor Melódica de Dó (ascendente)",
+        "note": "C-mmin-asc",
+        "notes": ["C", "D", "D#", "F", "G", "A", "B"],
+        "campo_harmonico": ["Cm", "D", "D#aug", "F", "G", "Am5", "Bm5"]
+    },
+    {
+        "name": "Escala Menor Melódica de Dó (descendente)",
+        "note": "C-mmin-desc",
+        "notes": ["C", "D", "D#", "F", "G", "G#", "A#"],
+        "campo_harmonico": ["Cm", "Dm5", "D#", "Fm", "Gm", "G#", "A#"]
+    },
+    {
+        "name": "Escala Menor Melódica de Ré (ascendente)",
+        "note": "D-mmin-asc",
+        "notes": ["D", "E", "F#", "G", "A", "B", "C#"],
+        "campo_harmonico": ["Dm", "E", "F#aug", "G", "A", "Bm5", "C#m5"]
+    },
+    {
+        "name": "Escala Menor Melódica de Mi (ascendente)",
+        "note": "E-mmin-asc",
+        "notes": ["E", "F#", "G#", "A", "B", "C#", "D#"],
+        "campo_harmonico": ["Em", "F#", "G#aug", "A", "B", "C#m5", "D#m5"]
+    },
+    {
+        "name": "Escala Menor Melódica de Fá# (ascendente)",
+        "note": "F#-mmin-asc",
+        "notes": ["F#", "G#", "A", "B", "C#", "D#", "F"],
+        "campo_harmonico": ["F#m", "G#", "Aaug", "B", "C#", "D#m5", "Fm5"]
+    },
+    {
+        "name": "Escala Menor Melódica de Lá (ascendente)",
+        "note": "A-mmin-asc",
+        "notes": ["A", "B", "C#", "D", "E", "F#", "G#"],
+        "campo_harmonico": ["Am", "B", "C#aug", "D", "E", "F#m5", "G#m5"]
+    },
+    {
+        "name": "Pentatônica Maior de Ré",
+        "note": "D-maj-pent",
+        "notes": ["D", "E", "F#", "A", "B"],
+        "campo_harmonico": ["D", "Em", "F#m", "A", "Bm"]
+    },
+    {
+        "name": "Pentatônica Menor de Mi",
+        "note": "E-min-pent",
+        "notes": ["E", "G", "A", "B", "D"],
+        "campo_harmonico": ["Em", "G", "Am", "Bm", "D"]
+    },
+    {
+        "name": "Pentatônica Maior de Fá#",
+        "note": "F#-maj-pent",
+        "notes": ["F#", "G#", "A#", "C#", "D#"],
+        "campo_harmonico": ["F#", "G#m", "A#m", "C#", "D#m"]
+    },
+    {
+        "name": "Escala Hirajoshi de Mi",
+        "note": "E-hirajoshi",
+        "notes": ["E", "F#", "A", "B", "D"],
+        "campo_harmonico": ["Em", "F#", "A", "Bm", "D"]
+    },
+    {
+        "name": "Escala Árabe de Sol",
+        "note": "G-arabic",
+        "notes": ["G", "G#", "B", "C", "D", "D#", "F#"],
+        "campo_harmonico": ["G", "G#m", "Bm", "Cm", "D", "D#m", "F#"]
+    }
+]

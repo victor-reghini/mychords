@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyChords • Teoria Musical, Instrumentos & Círculo de Quintas</title>
+    <meta name="description" content="Caderno editorial de teoria musical interativa: braço de violão, guitarra, contrabaixo, ukulele, viola caipira, violino e piano. Círculo de quintas, escalas e campos harmônicos.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𝄞</text></svg>">
+</head>
+<body>
+
+    <!-- Header Principal -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <h1 class="brand-title">
+                    <span style="color: var(--accent-amber);">𝄞</span> MyChords
+                    <span class="brand-badge">Estúdio Editorial</span>
+                </h1>
+                <p class="brand-tagline">Teoria Musical, Círculo de Quintas e Laboratório Prático de Instrumentos</p>
+            </div>
+
+            <div class="header-actions">
+                <!-- Seletor de Tema -->
+                <div class="theme-switch-group" role="group" aria-label="Seletor de tema visual">
+                    <button type="button" class="theme-btn active" data-theme-pref="light" title="Modo Claro (Papel Marfim)">
+                        ☀ Claro
+                    </button>
+                    <button type="button" class="theme-btn" data-theme-pref="dark" title="Modo Escuro (Estúdio)">
+                        ☾ Escuro
+                    </button>
+                    <button type="button" class="theme-btn" data-theme-pref="system" title="Adaptar ao Sistema">
+                        ⚙ Auto
+                    </button>
+                </div>
+
+                <!-- Botão de Exportação / Compra da Apostila -->
+                <button type="button" class="btn-cta-header trigger-apostila-modal">
+                    <span>📖</span> Exportar Apostila em PDF (R$ 14,99)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação por Abas -->
+    <nav class="nav-tabs-wrapper" aria-label="Navegação das seções do estudo">
+        <ul class="nav-tabs">
+            <li><button type="button" class="nav-tab-btn active" data-tab="lab">Laboratório de Instrumentos</button></li>
+            <li><button type="button" class="nav-tab-btn" data-tab="circle">Círculo de Quintas</button></li>
+            <li><button type="button" class="nav-tab-btn" data-tab="harmonic">Campo Harmônico</button></li>
+            <li><button type="button" class="nav-tab-btn" data-tab="scales">Escalas & Modos Gregos</button></li>
+            <li><button type="button" class="nav-tab-btn" data-tab="apostila">Apostila Completa</button></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+
+        <!-- ==============================================
+             SEÇÃO 1: LABORATÓRIO DE INSTRUMENTOS
+             ============================================== -->
+        <section id="section-lab" class="content-section active" aria-labelledby="lab-heading">
+            <h2 id="lab-heading" class="serif-heading" style="margin-bottom: 0.5rem; font-size: 1.7rem;">
+                Mapeamento de Escalas & Acordes no Instrumento
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Selecione o instrumento desejado (violão, guitarra, contrabaixo, ukulele, viola, violino ou piano), a afinação e visualize as notas e intervalos destacados. Clique em qualquer nota para ouvir seu som.
+            </p>
+
+            <!-- Painel de Controles -->
+            <div class="control-deck">
+                <div class="control-grid">
+                    <div class="control-field">
+                        <label for="instrument-select">Instrumento:</label>
+                        <select id="instrument-select">
+                            <!-- Preenchido via InstrumentRegistry.js -->
+                        </select>
+                    </div>
+
+                    <div class="control-field" id="tuning-field">
+                        <label for="tuning-select">Afinação:</label>
+                        <select id="tuning-select">
+                            <!-- Preenchido dinamicamente -->
+                        </select>
+                    </div>
+
+                    <div class="control-field">
+                        <label for="root-select">Tonalidade / Raiz:</label>
+                        <select id="root-select">
+                            <!-- Preenchido com as 12 notas cromáticas -->
+                        </select>
+                    </div>
+
+                    <div class="control-field">
+                        <label for="mode-type-select">Visualizar por:</label>
+                        <select id="mode-type-select">
+                            <option value="scale">Escala Musical</option>
+                            <option value="chord">Acorde Específico</option>
+                        </select>
+                    </div>
+
+                    <div class="control-field">
+                        <label for="item-select" id="item-label">Selecione:</label>
+                        <select id="item-select">
+                            <!-- Preenchido com Escalas ou Acordes -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button type="button" class="btn btn-primary" id="btn-play-audio">
+                        <span>▶</span> Ouvir Acorde / Escala
+                    </button>
+                    <button type="button" class="btn btn-outline" id="btn-toggle-display">
+                        Exibindo: Nomes das Notas
+                    </button>
+                    <button type="button" class="btn btn-outline" id="btn-toggle-orientation">
+                        Modo Horizontal
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resumo da Seleção Ativa -->
+            <div class="active-summary-banner">
+                <div>
+                    <h3 id="summary-title" class="summary-title serif-heading">Dó Maior (C)</h3>
+                    <p id="summary-meta" class="summary-meta">Tônica: C • Relativo: Am</p>
+                    <div id="summary-chips" class="summary-notes-chips">
+                        <!-- Chips de notas geradas -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legenda Didática de Intervalos -->
+            <div class="interval-legend" aria-label="Legenda de cores de intervalos">
+                <div class="legend-item"><span class="legend-dot" style="background-color: var(--color-root);"></span> <strong>Tônica (Fundamental)</strong></div>
+                <div class="legend-item"><span class="legend-dot" style="background-color: var(--color-third);"></span> <strong>Terça (3ª Maior/Menor)</strong></div>
+                <div class="legend-item"><span class="legend-dot" style="background-color: var(--color-fifth);"></span> <strong>Quinta (5ª Justa/Dim/Aum)</strong></div>
+                <div class="legend-item"><span class="legend-dot" style="background-color: var(--color-seventh);"></span> <strong>Sétima (7ª Maior/Menor)</strong></div>
+                <div class="legend-item"><span class="legend-dot" style="background-color: var(--color-other);"></span> <strong>Extensões e outras notas</strong></div>
+            </div>
+
+            <!-- Palco do Instrumento (Braço ou Teclado) -->
+            <div class="instrument-stage" id="instrument-stage-container">
+                <!-- Renderizado via FretboardRenderer ou PianoRenderer -->
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SEÇÃO 2: CÍRCULO DE QUINTAS
+             ============================================== -->
+        <section id="section-circle" class="content-section" aria-labelledby="circle-heading">
+            <h2 id="circle-heading" class="serif-heading" style="margin-bottom: 0.5rem; font-size: 1.7rem;">
+                Círculo de Quintas Interativo
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Clique em qualquer tonalidade no círculo para selecioná-la instantaneamente. O anel externo indica as tonalidades maiores e o anel interno exibe seus relativos menores e armaduras de clave.
+            </p>
+
+            <div class="circle-section-wrapper">
+                <div class="circle-svg-container" id="circle-svg-wrapper">
+                    <!-- Renderizado dinamicamente via CircleOfFifthsRenderer.js -->
+                </div>
+
+                <div class="circle-details-panel">
+                    <div class="circle-card">
+                        <h4>Sentido Horário (Quintas Ascendentes)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Cada passo no sentido dos ponteiros do relógio avança uma <strong>quinta justa (7 semitons)</strong> e acrescenta um <strong>sustenido (#)</strong> na armadura de clave: Fá#, Dó#, Sol#, Ré#, Lá#, Mi#, Si#.
+                        </p>
+                    </div>
+
+                    <div class="circle-card">
+                        <h4>Sentido Anti-Horário (Quartas Ascendentes)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Cada passo no sentido anti-horário avança uma <strong>quarta justa (5 semitons)</strong> e acrescenta um <strong>bemol (♭)</strong> na armadura: Sib, Mib, Láb, Réb, Solb, Dób, Fáb.
+                        </p>
+                    </div>
+
+                    <div class="circle-card">
+                        <h4>Tons Relativos & Tons Vizinhos</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Toda tonalidade maior compartilha exatamente a mesma armadura de clave e notas com seu <strong>relativo menor</strong> (localizado no anel interno, 3 semitons abaixo da tônica maior).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SEÇÃO 3: CAMPO HARMÔNICO
+             ============================================== -->
+        <section id="section-harmonic" class="content-section" aria-labelledby="harmonic-heading">
+            <h2 id="harmonic-heading" class="serif-heading" style="margin-bottom: 0.5rem; font-size: 1.7rem;">
+                Campo Harmônico & Funções Tonalizantes
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Acordes gerados pela sobreposição de terças e quintas na escala diatônica. Clique no botão de áudio de qualquer acorde para ouvir sua sonoridade.
+            </p>
+
+            <div class="table-responsive">
+                <table class="theory-table" aria-label="Tabela do campo harmônico maior">
+                    <thead>
+                        <tr>
+                            <th>Grau</th>
+                            <th>Tríade</th>
+                            <th>Notas da Tríade</th>
+                            <th>Tétrade (com 7ª)</th>
+                            <th>Notas da Tétrade</th>
+                            <th>Função Harmônica</th>
+                        </tr>
+                    </thead>
+                    <tbody id="harmonic-field-tbody">
+                        <!-- Gerado via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                <div class="circle-card">
+                    <h4>Função Tônica (I, VIm, IIIm)</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        Sensação de repouso, estabilidade, ponto de partida e conclusão de uma frase musical.
+                    </p>
+                </div>
+                <div class="circle-card">
+                    <h4>Função Subdominante (IV, IIm)</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        Sensação de afastamento da tônica, movimento suave e preparação para a dominante.
+                    </p>
+                </div>
+                <div class="circle-card">
+                    <h4>Função Dominante (V7, VII° / m7b5)</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        Contém o trítono entre a 3ª e a 7ª. Tensão máxima que pede resolução imediata na tônica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SEÇÃO 4: ESCALAS & MODOS GREGOS
+             ============================================== -->
+        <section id="section-scales" class="content-section" aria-labelledby="scales-heading">
+            <h2 id="scales-heading" class="serif-heading" style="margin-bottom: 0.5rem; font-size: 1.7rem;">
+                Catálogo de Escalas Musicais & Modos Gregos
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Explore as fórmulas, intervalos e características sonoras de cada modo e escala. Clique para mapear a escala diretamente no braço ou teclado do seu instrumento.
+            </p>
+
+            <div id="scales-catalog-list">
+                <!-- Preenchido via ScalesData.js -->
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SEÇÃO 5: APOSTILA COMPLETA
+             ============================================== -->
+        <section id="section-apostila" class="content-section" aria-labelledby="apostila-heading">
+            <div class="apostila-hero-card">
+                <div>
+                    <span class="brand-badge" style="margin-bottom: 0.75rem; display: inline-block;">Produto Digital Exclusivo</span>
+                    <h2 id="apostila-heading" class="serif-heading" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem;">
+                        Apostila Completa de Teoria & Harmonia Musical
+                    </h2>
+                    <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        Tenha em mãos um livro digital de estudo detalhado, diagramado profissionalmente em formato PDF para consulta no celular, computador, tablet ou impressão.
+                    </p>
+
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>Fundamentos e Intervalos:</strong> Cálculo de semitons, notas e formação de acordes.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>Círculo de Quintas Detalhado:</strong> Armaduras de clave para todos os 12 tons maiores e relativos.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>Os 7 Modos Gregos Diatônicos:</strong> Notas características, fórmulas e aplicações harmônicas.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>12 Campos Harmônicos Completos:</strong> Tríades e tétrades de Dó a Si organizadas em tabelas.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>Guia dos Instrumentos:</strong> Violão, Guitarra (6 e 7 cordas), Contrabaixo, Ukulele, Viola Caipira, Violino e Piano.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">
+                            <span style="color: var(--accent-amber); font-weight: 700;">✓</span>
+                            <span><strong>Envio Instantâneo por E-mail:</strong> Receba o PDF diretamente na sua caixa de entrada e baixe na hora.</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn btn-primary trigger-apostila-modal" style="font-size: 1.05rem; padding: 0.8rem 1.6rem;">
+                        <span>📖</span> Adquirir Apostila por R$ 14,99
+                    </button>
+                </div>
+
+                <div class="apostila-book-mockup">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent-amber);">𝄞</div>
+                    <h3 class="book-title">Apostila de Teoria & Harmonia</h3>
+                    <p class="book-subtitle">Manual Prático de Instrumentos e Estudo</p>
+                    <div class="price-tag">
+                        R$ 14,99 <small>pagamento único</small>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                        Transação 100% segura processada via Stripe.<br>Envio imediato do PDF por e-mail via SSL.
+                    </p>
+                    <button type="button" class="btn btn-primary trigger-apostila-modal" style="width: 100%;">
+                        Comprar Agora
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de Checkout / Compra da Apostila -->
+    <div id="checkout-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 id="modal-title" class="serif-heading" style="font-size: 1.3rem;">Exportar Apostila Completa (PDF)</h3>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Fechar janela">✕</button>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Toda a consulta no site é e continuará 100% pública e gratuita. Ao adquirir a Apostila em PDF por <strong>R$ 14,99</strong>, você apoia o projeto e recebe o material didático consolidado por e-mail para impressão e estudo offline.
+            </p>
+
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="checkout-email">Seu melhor e-mail para receber a apostila:</label>
+                    <input type="email" id="checkout-email" placeholder="seu-email@exemplo.com" required>
+                </div>
+
+                <button type="submit" id="checkout-submit-btn" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 0.75rem;">
+                    Pagar R$ 14,99 e Receber Apostila
+                </button>
+
+                <div id="checkout-feedback" class="form-feedback"></div>
+            </form>
+
+            <div style="margin-top: 1.25rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                🔒 Pagamento processado com segurança pela <strong>Stripe</strong>.<br>
+                O PDF é enviado para o seu e-mail imediatamente após a confirmação.
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé Editorial -->
+    <footer class="site-footer">
+        <div class="footer-nav">
+            <a href="#section-lab" class="nav-tab-btn" data-tab="lab">Laboratório</a>
+            <a href="#section-circle" class="nav-tab-btn" data-tab="circle">Círculo de Quintas</a>
+            <a href="#section-harmonic" class="nav-tab-btn" data-tab="harmonic">Campo Harmônico</a>
+            <a href="#section-scales" class="nav-tab-btn" data-tab="scales">Escalas</a>
+            <a href="#section-apostila" class="nav-tab-btn" data-tab="apostila">Apostila PDF</a>
+        </div>
+        <p>© 2026 MyChords • Caderno Editorial de Teoria Musical. Desenvolvido para músicos, arranjadores e estudantes.</p>
+    </footer>
+
+    <!-- Script Principal como Módulo ES6 -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

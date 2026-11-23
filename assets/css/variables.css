@@ -1,0 +1,121 @@
+/**
+ * variables.css
+ * Design tokens e variáveis CSS para o estilo Editorial Sheet-Music / Studio Handbook.
+ * Suporta temas Claro (prioritário), Escuro e adaptação automática ao sistema.
+ */
+
+:root {
+    /* Tipografia */
+    --font-serif: "Playfair Display", "Georgia", "Baskerville", "Times New Roman", serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+    /* Espaçamentos e Raios */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --tap-min: 44px;
+
+    /* Transições táteis e sutis */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+
+    /* Sombra de apoio para elevação funcional */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* TEMA CLARO (Prioritário - Papel Marfim / Partitura Editorial) */
+:root, [data-theme="light"] {
+    --bg-page: #FBF9F5;
+    --bg-surface: #FFFFFF;
+    --bg-surface-alt: #F6F3ED;
+    --bg-surface-hover: #EFEBE3;
+    
+    --border-subtle: #E8E2D8;
+    --border-strong: #D5CCC0;
+    
+    --text-primary: #1A1D20;
+    --text-secondary: #565C66;
+    --text-muted: #7E8592;
+    --text-on-accent: #FFFFFF;
+
+    /* Acento Editorial Estúdio */
+    --accent-amber: #B86B00;
+    --accent-amber-hover: #A05D00;
+    --accent-amber-light: #FBF1E0;
+
+    /* Cores de Intervalos e Graus Musicais (Alto Contraste WCAG) */
+    --color-root: #A82233;        /* Fundamental / Tônica (Rubi clássico) */
+    --color-second: #397A88;      /* Segunda (Azul petróleo suave) */
+    --color-third: #1B7368;       /* Terça Maior / Menor (Esmeralda jade) */
+    --color-fourth: #6E4582;      /* Quarta justa / aum (Ametista) */
+    --color-fifth: #B86B00;       /* Quinta justa / dim (Âmbar estúdio) */
+    --color-sixth: #4E6594;       /* Sexta (Ardósia azulada) */
+    --color-seventh: #3F51B5;     /* Sétima (Índigo partitura) */
+    --color-other: #526072;       /* Extensões e outras notas */
+
+    /* Elementos do Instrumento */
+    --fretboard-wood: #F4EFE6;
+    --fretboard-string: #858D98;
+    --fretboard-fret: #D0C6B8;
+    --fretboard-nut: #2A2E35;
+    --fret-inlay: #D8CEBE;
+
+    /* Teclado de Piano */
+    --piano-white-key: #FFFFFE;
+    --piano-white-key-border: #D2CBC0;
+    --piano-black-key: #25282F;
+    --piano-black-key-border: #15181C;
+
+    /* Foco acessível */
+    --focus-ring: #B86B00;
+}
+
+/* TEMA ESCURO (Quadro-Negro de Conservatório / Estúdio Noturno) */
+[data-theme="dark"] {
+    --bg-page: #121417;
+    --bg-surface: #1A1D22;
+    --bg-surface-alt: #22262D;
+    --bg-surface-hover: #2B303A;
+
+    --border-subtle: #2C323B;
+    --border-strong: #3D4450;
+
+    --text-primary: #F2EFE9;
+    --text-secondary: #A3AAB5;
+    --text-muted: #737B87;
+    --text-on-accent: #121417;
+
+    /* Acento Editorial Estúdio */
+    --accent-amber: #E59819;
+    --accent-amber-hover: #F2A92E;
+    --accent-amber-light: #2D2415;
+
+    /* Cores de Intervalos Luminosas em Fundo Escuro */
+    --color-root: #E0485C;        /* Tônica carmesim luminosa */
+    --color-second: #4EB7C9;
+    --color-third: #2DB8A1;       /* Terça menta límpida */
+    --color-fourth: #B37CD0;
+    --color-fifth: #F5AC2B;       /* Quinta ouro âmbar */
+    --color-sixth: #7CA1DB;
+    --color-seventh: #8090F8;     /* Sétima lavanda */
+    --color-other: #8FA2BD;
+
+    /* Elementos do Instrumento */
+    --fretboard-wood: #1E2228;
+    --fretboard-string: #9BA4B2;
+    --fretboard-fret: #454D59;
+    --fretboard-nut: #0D0F12;
+    --fret-inlay: #3D4452;
+
+    /* Teclado de Piano */
+    --piano-white-key: #EDE8DF;
+    --piano-white-key-border: #3A404C;
+    --piano-black-key: #14171B;
+    --piano-black-key-border: #2A2F38;
+
+    /* Foco acessível */
+    --focus-ring: #E59819;
+}
